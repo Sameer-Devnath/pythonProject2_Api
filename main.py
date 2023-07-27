@@ -16,5 +16,5 @@ temp_kelvin = response['main']['temp']
 temp_celsius = kelvin_to_celsius(temp_kelvin)
 
 # print(response)
-print("The temperature in",CITY,"is: ",temp_celsius,"℃")
+print("The temperature in",CITY,"is: ",format(temp_celsius,".2f"),"℃")
 
