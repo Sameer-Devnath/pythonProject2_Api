@@ -12,9 +12,12 @@ def kelvin_to_celsius(kelvin):
 url = BASE_URL + "appid=" + API_KEY + "&q=" + CITY
 response = requests.get(url).json()
 
-temp_kelvin = response['main']['temp']
-temp_celsius = kelvin_to_celsius(temp_kelvin)
-
-# print(response)
-print("The temperature in",CITY,"is: ",format(temp_celsius,".2f"),"℃")
+try:
+    temp_kelvin = response['main']['temp']
+    temp_celsius = kelvin_to_celsius(temp_kelvin)
+    
+    # print(response)
+    print("The temperature in",CITY,"is: ",format(temp_celsius,".2f"),"℃")
+except:
+    print("Invalid city name: Please check your city name")
 
